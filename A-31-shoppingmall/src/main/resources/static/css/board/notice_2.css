@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	overflow-y:scroll;
+	margin-bottom:100px;
+}
+
+h1 {
+	font-size: 50px;
+	padding: 25px;
+}
+
+.목록list {
+	box-sizing: border-box;
+	width: 80%;
+}
+span {
+	padding:10px;
+}
+ul {
+	display: flex;
+	list-style: none;
+	padding: 10px;
+	justify-content: space-around;
+}
+
+.wrapper {
+	width: 80%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.menu_button {
+	box-sizing: border-box;
+	width: fit-content;
+	font-size: 25px;
+	height: 100%;
+	background-color: white;
+	border-color: white;
+}
+
+.search_bar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: solid 2px darkolivegreen;
+	padding: 15px 30px 15px 30px;
+	background-color: beige;
+	width: inherit;
+}
+
+.more {
+	text-align: center;
+	padding: 0 20px 0 20px;
+	margin: 0 20px 0 20px;
+	display: flex;
+}
+
+.more>select {
+	width: 100px;
+	margin-right: 50px;
+}
+
+#검색 {
+	height: 30px;
+	width: 500px;
+	margin-right: 50px;
+}
+
+#제출 {
+	height: 100%;
+}
+
+td {
+	text-align: center;
+	height: 40px;
+	padding: 10px;
+	vertical-align: middle;
+}
+
+.table {
+	padding-top: 15px;
+	margin-top: 15px;
+}
+
+#thead {
+	border-bottom: solid 3px darkolivegreen;
+	border-top: solid 3px darkolivegreen;
+	font-size: 25px;
+	font-weight: 700;
+}
+
+#공지 {
+	vertical-align: middle;
+}
+#campaign {
+	width:25px;
+	height:30%;
+	
+}
+

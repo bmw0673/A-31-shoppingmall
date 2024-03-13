@@ -1,0 +1,388 @@
+@charset "UTF-8";
+
+body{
+	margin: auto;
+	justify-content: center;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.content{
+	width: 1180px;
+	margin: 50px auto 50px;
+	/*border: 1px red solid;*/
+}
+
+.mypage-wrap{
+	width: 1026px;
+	height: 241px;
+	display: flex;
+	/*border: 1px red solid;*/
+	margin: auto;
+}
+
+.mypage-personal{
+	width: 180px;
+	/*border: 1px red solid;*/
+	float: left;
+	margin: 0;
+	background-color:#d3c5ab;
+	padding: 39px 0 0 ;
+	text-align: center;
+    color: #fff;
+}
+
+.grade-icon{
+	background-image: url("/images/mypage/icon_grade.png");
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    text-indent: -9999px;
+    background-position: 0 0;    
+}
+
+.name{
+	margin-top: 14px;
+    font-size: 21px;
+    line-height: 1;
+}
+
+.user-name {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.mypage-personal2{
+	padding: 39px 0;
+	background-color: #f7f7f7;
+}
+
+.edit{
+    margin-top: 20px;
+}
+
+.edit > a {
+	text-align: center;
+    color: #fff;
+    font-size: 13px;
+}
+
+.edit-icon{
+	background-image: url("/images/mypage/setting.svg");
+	background-size: contain;
+	background-position: 0 0;    
+    width: 14px;
+    height: 14px;
+    vertical-align: -2.5px;
+    display: inline-block;
+    filter: brightness(0) invert(1) grayscale(100%) contrast(100%);
+}
+
+.mypage-personal2 > ul {
+	width: 846px;
+	/*border: 1px red solid;*/
+	float: left;
+	margin: 0;
+	
+}
+
+.mypage-personal2 > ul > li{
+	float: left;
+    width: 25%;
+    height: 160px;
+    text-align: center;
+   /* border: 1px red solid;*/
+    margin: 0;
+}
+
+.mypage-icon,.mypage-icon2,.mypage-icon3,.mypage-icon4{
+	background-image: url("/images/mypage/icon_mypage.png");
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+}
+.mypage-icon{
+	background-position: -20px 0;
+}
+
+.mypage-icon2{
+	background-position: -90px 0;
+}
+
+.mypage-icon3{
+	background-position: -160px 0;
+}
+
+.mypage-icon4{
+	background-position: -230px 0;
+}
+
+.mypage-personal2 > ul > li > a > b {
+	font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    line-height: 1;
+    display: block;
+    margin-top: 15px;
+}
+
+.mypage-personal2 > ul > li > a > span {
+	display: block;
+    font-size: 26px;
+    line-height: 1;
+    color: #333;
+    margin-top: 34px;
+}
+
+.mypage-contents-wrap{
+	width: 1026px;
+	height: 1000px;
+	/*border: red 1px solid;*/
+	display: flex;
+	margin: 0 auto ;
+}
+
+.mypage-lnb {
+	width: 180px;
+	border: 1px solid #e0e0e0;
+}
+
+.mypage-lnb > ul li a{
+    display: inline-block;
+    width: 100%;
+    padding: 20px 0 20px 1px;
+    font-size: 18px;
+}
+
+.mypage-lnb h3 {
+	width: 150px;
+    height: 40px;
+    margin: 20px auto 10px;
+    border: 1px solid #e0e0e0;
+    background: #f8f8f8;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.mypage-lnb h3:hover{
+	background-color: #e0e0e0;
+	cursor: pointer;
+}
+.mypage-lnb	> ul li a:hover {
+	cursor: pointer;
+	background-color: #e0e0e0;
+}
+
+.mypage-comm{
+	position: relative;
+    padding: 40px;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    width: 846px;
+}
+
+.click-content{
+	background-color: #f7f7f7;
+	
+}
+
+/*.click-content > ul > li > a {
+	padding-left: 10px;
+}*/
+
+.mypage-comm-block > h4 {
+	text-align: justify ;
+	font-weight: bold;
+}
+
+.mypage-comm-block > a {
+	display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 6px;
+    width: 31px;
+    height: 31px;
+    text-align: right;
+    background-image: url("/images/mypage/arrow_down.svg");
+}
+
+.mypage-comm-block , .mypage-cblock{
+	position: relative;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.mypage-cblock{
+	margin-top: 30px;
+}
+
+.mypage-cblock > h4 {
+	text-align: justify ;
+	font-weight: bold;
+}
+
+.mypage-cblock > a {
+	display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 6px;
+    width: 31px;
+    height: 31px;
+    text-align: right;
+    background-image: url("/images/mypage/arrow_down.svg");
+}
+
+.mypage-cblock > p {
+	display: inline-block;
+    position: absolute;
+    left: 120px;
+    text-align: right;
+    font-size: 14px;
+    top: 0;
+    color: #828282;
+}
+
+.mypage-order-block{
+	padding-top: 48px;
+}
+.mypage-order{
+	height: 200px;
+    padding-top: 32px;
+    border-top: 0;
+    border-bottom: 0;
+    background: #f7f7f7;
+    text-align: center;
+}
+
+.mypage-order > ol {
+	display: inline-block;
+}
+
+.mypage-order > ol li {
+	float: left;
+    position: relative;
+    width: 138px;    
+}
+
+.mypage-order > ol li::before {
+	content: '1';
+    display: block;
+    width: 22px;
+    height: 22px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: #333;
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    line-height: 22px;
+}
+
+.mypage-order > ol li:nth-child(2)::before{
+	content: '2';
+}
+
+.mypage-order > ol li:nth-child(3)::before{
+	content: '3';
+}
+
+.mypage-order > ol li:nth-child(4)::before{
+	content: '4';
+}
+
+.mypage-order > ol li:nth-child(5)::before{
+	content: '5';
+}
+
+.mypage-order > ol li::after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    lefT: -13px;
+    width: 22px;
+    height: 0;
+    border-top: 4px dotted #ccc;
+}
+
+.mypage-order > ol li:nth-child(1)::after{
+	display: none;
+}
+
+.step-head > span {
+	display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+.step-body {
+	margin-top: 15px;
+    font-size: 12px;
+    color: #828282;
+    line-height: 16px;
+}
+
+.mypage-order-guide{
+	padding: 25px;
+    border: 1px solid #f7f7f7;
+    
+}
+
+.text-guide-block{
+	text-align: justify;
+}
+
+.text-guide-block2{
+	text-align: justify;
+	margin-top: 15px;
+}
+
+
+.guideTxt{
+	margin-top: 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.guideTxt > ul > li{
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 18px;
+	color: #828282;
+}
+
+.guideTxt > ul > li::before{
+	content: '';
+    display: inline-block;
+    width: 2px;
+    height: 2px;
+    margin: 10px 6px 0 -8px;
+    background: #828282;
+    vertical-align: top;
+}
+
+#clickcontents2:hover{
+	cursor: pointer;
+}
+
+.topbnt{
+	position: fixed;
+    bottom: 150px;
+    left: 1800px;
+    z-index: 1;
+    width: 50px;
+    height: 30px;
+    background-color: #828282;
+   
+    
+}
+
+.topbnt > a {
+	vertical-align: middle;
+    color: white;
+}

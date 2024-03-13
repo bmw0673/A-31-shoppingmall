@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+.header {
+	background-color: #F0EAD4;
+	border-bottom: 1px solid #e3dcc2;
+	position: relative;
+	min-width: 1280px;
+}
+
+.header>.hd_container {
+	width: 1180px;
+	margin: 0px auto;
+}
+.header>.hd_container>.hd_top {
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	height: 60px;
+	padding: 0 15px;
+}
+
+.header>.hd_container>.hd_top>li {
+	padding: 0 5px;
+}
+.header>.hd_container>.hd_top>li > a {
+	text-decoration: none;
+    width: 25px;
+    height: 25px;
+    color: #222;
+    display: block;
+}
+
+.header>.hd_container>.hd_bottom {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 60px;
+}
+
+.header>.hd_container>.hd_bottom>.search {
+	display: flex;
+    height: 30px;
+    width: 250px;
+    border: 1px solid #a9a9a9;
+    border-radius: 10px;
+    padding: 3px 6px 3px 10px;
+    background-color: #ededed;
+}
+
+.header>.hd_container>.hd_bottom>.search>input {
+	border: none;
+	width: 100%;
+	outline: none;
+	background-color: transparent;
+}
+.header>.hd_container>.hd_bottom>.search> button {
+	background-color: transparent;
+    border: none;
+    padding: 1px 6px;
+    cursor: pointer;
+}
+.header>.hd_container>.hd_bottom>.search> button > img {
+	width: 20px;
+	height: 20px;
+}
+
+.header>.hd_container>.hd_bottom>.navigation {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	padding: 0;
+	justify-content: center;
+}
+
+.header>.hd_container>.hd_bottom>.navigation>li>a {
+	font-size: 18px;
+    line-height: 1.25;
+    font-weight: bold;
+    color: #67754c;
+    height: 100%;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0px;
+}
+
+.header>.hd_container>.hd_bottom>.navigation>li {
+	height: 100%;
+	width: 70px;
+}
+.header>.hd_container>.hd_bottom>.navigation > .recommend > a::after {
+	content: "*";
+    position: relative;
+    top: -7px;
+    color: #c86363;
+}
+.header>.hd_container>.logo_area {
+	height: 0px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.header>.hd_container>.logo_area>.logo {
+	height: 100px;
+	width: 200px;
+	margin: 0 auto;
+	display: block;
+}
+
+
+img {
+	width: 100%;
+	height: 100%;
+}

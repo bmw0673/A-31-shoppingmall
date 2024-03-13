@@ -1,0 +1,257 @@
+@charset "UTF-8";
+
+
+.top {
+    background-color: #EAE6E0; /* 원하는 배경색으로 변경 */
+    padding: 10px; /* 테두리와 내용 사이의 간격 조절 */
+    display: flex; /* 내부 요소들을 수평으로 정렬하기 위해 Flexbox 사용 */
+    justify-content: space-between; /* 내부 요소들을 동일한 간격으로 정렬 */
+    align-items: flex-end; /* 세로 정렬을 아래쪽으로 설정 */
+}
+
+
+.column1,
+.column2,
+.column3 {
+    padding: 5px; /* 테두리와 내용 사이의 간격 조절 */
+
+}
+
+.column1 img {
+    width: 25px; /* 이미지의 폭을 조절 */
+    height: 25x; /* 이미지의 높이를 조절 */
+    margin-left: 110px; /* 이미지 간의 간격을 조절 */
+    
+}
+
+.column2 img{
+    width:240px;
+    height:200px; 
+    padding-top:-10px;
+}
+
+.column3{
+    padding: 0 45px 5 0;
+    margin-right: 40px;
+}
+.column3 img{
+    width: 25px; /* 이미지의 폭을 조절 */
+    height: 25x; /* 이미지의 높이를 조절 */
+    padding-right: 20px;
+    margin-right: 20px; /* 이미지 간의 간격을 조절 */
+}
+
+.search-box {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 50px; /* 레이아웃에 따라 상단 위치 조정 가능 */
+    width: 0; /* 초기 너비를 0으로 설정하여 숨김 */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    transition: width 0.3s ease; /* 너비 변화에 대한 전환 효과 추가 */
+}
+
+#searchButton {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+body {
+    cursor: default;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    background-color: #EAE6E0; /* 배경색 추가 */
+}
+
+.navigation div {
+    position: relative;
+    color: #008000; /* 글자 색상을 원하는 색상으로 변경 (예: 녹색) */
+    margin: 0 2.5cm 0 0; /* 텍스트 간의 좌우 마진을 추가하여 간격 조절 */
+    cursor: pointer;
+}
+
+.navigation a {
+    color: inherit; /* 부모 요소의 색상을 상속받음 */
+    text-decoration: none; /* 링크의 밑줄 제거 */
+}
+
+
+*{margin:0; padding:0;}
+ul{list-style:none;}
+a{text-decoration:none; color:#333;}
+.navigation:after{display:block; content:''; clear:both;}
+.navigation > li{position:relative; float:left; margin-right:5px;}
+.navigation > li > a{display:block; padding:0 15px; background:#333; height:40px; line-height:40px; color:#fff;}
+.navigation > li:hover .down {display:block;}
+.navigation .down {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    border-radius: 5px; 
+    overflow: hidden; /* 테두리를 둥글게 하기 위해 overflow 속성을 추가합니다 */
+
+
+}
+
+.navigation .down a {
+    display: block;
+    padding: 5px;
+    background: #d2cfc9;
+    color: #587650;
+    transition: background-color 0.3s; /* 배경색 변화에 대한 전환 효과 추가 */
+}
+
+.navigation .down a:hover {
+    background-color: #f6f5f2; /* 마우스를 올렸을 때 배경색 변경 */
+}
+
+
+
+/* 바지 관련 css */
+
+.pantsTop img {
+    width: 100%;
+    height: 610px;
+    margin: 0 auto; /* 가로 중앙 정렬 */
+}
+
+.pants {
+    display: flex;
+    justify-content: space-around; 
+    font-family: 'Noto Sans KR', sans-serif;
+    font-style: bold;
+}
+
+
+.pants .column img {
+    width: 335px;
+    height: 335px;
+    border-radius: 5px; /* 테두리 둥글기 설정 */
+    margin-bottom: 8px;
+}
+
+
+.small-button {
+
+    background-color: #9da980; /* 배경 색상 */
+    color: #ffffff; /* 텍스트 색상 */
+    font-family: 'Noto Sans KR', sans-serif;
+    padding: 2px; /* 내부 여백 */
+    border: none; /* 테두리 없음 */
+    border-radius: 2px; /* 테두리 둥글기 */
+    cursor: pointer; /* 커서 타입 */
+}
+
+
+.pants .column img {
+    width: 335px;
+    height: 335px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* transform 및 box-shadow 속성에 대한 트랜지션 효과 추가 */
+}
+
+.pants .column img:hover {
+    transform: scale(1.02); /* 호버 시 확대 효과 추가 */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* 호버 시 약간의 그림자 효과 추가 */
+}
+
+
+
+
+
+
+
+
+/* --------여기서부터 FOOTER----------- 시작! */
+
+.footer {
+    background-color: #8c8a86;
+    color: white;
+    padding: 20px;
+    display: flex;
+    text-align: left;
+    justify-content: space-between;
+    height: 450px; /* 높이를 자동으로 조절하도록 변경 */
+    display: flex;
+    flex-wrap: wrap; /* 요소들이 넘칠 경우 다음 줄로 이동하도록 설정 */
+}
+
+
+.footer .column1 {
+    border: none;
+    display: flex;
+    flex-direction: column; /* 컬럼(세로)으로 정렬하도록 변경 */
+    align-items: flex-start; /* 좌측 정렬 */
+    width: 400px;
+    height: 300px; 
+    padding-bottom: 20px; 
+}
+
+.social {
+    display: flex;
+    align-items: center;
+}
+
+.social img {
+    width: 30px;
+    height: 30px;
+    margin: 0 15px 0 0; /* 각 아이콘 사이의 간격을 주기 위해 오른쪽 마진 추가 */
+}
+
+
+.footer .column2 {
+    border: none;
+    display: flex;
+    flex-direction: column; /* 컬럼(세로)으로 정렬하도록 변경 */
+    align-items: flex-start; /* 좌측 정렬 */
+    width: 400px;
+    height: 300px; /* 높이를 자동으로 조절하도록 변경 */
+    padding-bottom: 20px; /* Social 아이콘과 텍스트 사이의 간격을 주기 위해 하단 패딩 추가 */
+}
+
+.footer .column3 {
+    border: none;
+    display: flex;
+    flex-direction: column; /* 컬럼(세로)으로 정렬하도록 변경 */
+    align-items: flex-start; /* 좌측 정렬 */
+    width: 400px;
+    height: 300px; 
+    padding-bottom: 20px; 
+}
+
+.column2 a,
+.column3 a
+	{
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    color: inherit; /* 부모 요소의 색상을 상속받음 */
+}
+
+.column2 a:hover,
+.column3 a:hover
+	{
+    text-decoration: none; /* 링크에 마우스를 올렸을 때 밑줄 제거 */
+    color: inherit; /* 부모 요소의 색상을 상속받음 */
+}
+
+
+.payment {
+    display: flex;
+    align-items: center;
+}
+
+.payment img {
+    width: 28px;
+    height: 28px;
+    margin: 0 5px 0 0; /* 각 아이콘 사이의 간격을 주기 위해 오른쪽 마진 추가 */
+}

@@ -1,0 +1,193 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background-image: url("/images/sign/login/login2.png");
+	/* 이미지 경로를 설정하세요 */
+	background-size: cover;
+	/* 배경 이미지를 화면에 꽉 채우도록 설정 */
+	background-position: center;
+	/* 배경 이미지를 가운데 정렬 */
+
+}
+
+.login_title {
+	font-family: 'Gowun Dodum', sans-serif;
+	text-align: center;
+	margin: 10px 0 20px;
+	font-size: 25px;
+}
+
+
+.container {
+	display: flex;
+	align-items: center;
+	height: 484px;
+}
+
+.login-container {
+	background-color: #f4f2ef;
+	height: 484px;
+	width: 320px;
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+	max-width: 300px;
+	margin: 0 auto;
+	height: 350px;
+	padding-top: 65px;
+}
+
+
+
+
+h2 {
+	text-align: center;
+}
+
+label {
+	display: block;
+	margin-top: 10px;
+}
+
+input {
+	width: 100%;
+	padding: 8px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+	border: none;
+	background-color: #e3e3e3;
+	border-radius: 4px;
+}
+
+.rememberMe {
+	display: inline-block;
+	margin-top: 10px;
+	/* 필요한 경우 상단 간격을 조절할 수 있습니다. */
+}
+
+input[type="checkbox" i] {
+	background-color: initial;
+	cursor: default;
+	appearance: auto;
+	box-sizing: border-box;
+	margin: 0px 0px 0px 0px;
+	padding: initial;
+	border: initial;
+}
+
+button {
+	background-color: #799172;
+	color: white;
+	padding: 10px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	width: 100%;
+	margin: 30px 0 20px;
+
+}
+
+button:hover {
+	background-color: #4f6a48;
+}
+
+.or {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+
+
+.social {
+	display: flex;
+	justify-content: center;
+	margin: 20px;
+}
+
+.signUp {
+	text-align: center;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.social img {
+	width: 30px;
+    height: 30px;
+    margin: 0 10px;
+	/* 왼쪽 마진을 우측 마진으로 변경 */
+}
+
+.welcomePhoto img {
+	max-width: 100%;
+	height: auto;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.wrap {
+	display: flex;
+	justify-content: center;
+	margin-top: 40px;
+}
+
+.wrap>li>a{
+	text-decoration: none;
+	color: black;
+}
+
+.wrap > li:not(:last-child) {
+	margin-right: 20px;
+}

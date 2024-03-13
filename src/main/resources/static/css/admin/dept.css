@@ -1,0 +1,65 @@
+@charset "UTF-8";
+.br {
+	margin-top: 100px;
+}
+.content {
+	padding: 50px;
+	background-color: #fff;
+	display: inline-block;
+}
+.table {
+	width: 100%;
+}
+table th td{
+	border: 1px solid;
+}
+thead {
+	font-weight: bold;
+}
+
+td, th{
+	border: 1px solid;
+	height: 40px;
+	text-align: center;
+	vertical-align: middle;
+	width: 140px;
+}
+
+.dept-read-th {
+	height: 50px;
+}
+
+th {
+	background-color: #e9e9e9;
+	width: 140px;
+	font-weight: bold;
+}
+
+/**************************************************/
+td > input {
+	outline: none;
+    border: none;
+    padding: 0;
+    width: 120px;
+    height: 100%;
+    padding-left: 10px;
+    font-size: 16px;
+}
+td > select {
+	height: 100%;
+    width: 100%;
+    border: none;
+    padding-left: 10px;
+    font-size: 16px;
+}
+.content > form > .btn-area{
+	display: flex;
+    height: 60px;
+    justify-content: center;
+    align-items: end;
+}
+
+.content > form > .btn-area > button {
+	width: 70px;
+    height: 40px;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/my-layout :: layout(~{this::head},~{this::main} )}">
+
+
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="/css/board/write.css">
+
+	<style>
+	</style>
+</head>
+
+<body>
+
+	<main>
+		<div>
+			<h2>문의내용</h2>
+			<form action="/write" method="post">
+				<table class="table">
+					<colgroup>
+						<col width=200px style="background:beige" />
+						<col width=700px style="background:whitesmoke" />
+					</colgroup>
+					<thead>
+						<tr>
+							<td class="td_1">분류</td>
+							<td class="td_2">
+								<select>
+									<option>회원가입</option>
+									<option>상품</option>
+									<option>배송</option>
+								</select>
+
+							</td>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td class="td_1">제목</td>
+							<td class="td_2"><input type="text" name="title" class="제목" maxlength="50"
+									placeholder="제목을 입력하시오"></td>
+						</tr>
+						<tr>
+							<td class="td_1">내용</td>
+							<td class="td_2">
+								<div class="textwrapper">
+									<textarea placeholder="입력하시오" name="content" class="text_area" maxlength="2000"
+										style="min-width: 500px; min-height: 300px;"></textarea>
+								</div>
+
+							</td>
+						</tr>
+						<tr>
+							<td class="td_1">첨부파일</td>
+							<td class="td_2">
+								<div>
+									<input type="file" id="file" name="file">
+								</div>
+							</td>
+						</tr>
+						
+
+					</tbody>
+				</table>
+
+				<div class="enroll"><button type="submit">등록하기</button></div>
+			</form>
+		</div>
+	</main>
+</body>
+
+</html>

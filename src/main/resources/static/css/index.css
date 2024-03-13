@@ -1,0 +1,272 @@
+@charset "UTF-8";
+
+.main-container { 
+	width: 1180px;
+	margin: 0 auto;
+	padding-bottom: 300px;
+}
+
+.slick-slide {
+	opacity: 0.3;
+	width: 1280px;
+}
+.slick-current {
+	opacity: 1;
+}
+.slick-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slick-dots > li {
+	width: 20px;
+	height: 4px;
+	background-color: #aaa;
+	margin: 0 6px;
+	transition: 0.4s;
+	cursor: pointer;
+}
+.slick-dots > .slick-active {
+	width: 40px;
+	height: 4px;
+	background-color: #4a4a4a;
+	margin: 0 6px;
+	transition: 0.4s;
+}
+.slick-dots > li > button {
+	display: none;
+}
+.slick-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 50px;
+	color: #222;
+	display: flex;
+	align-items: center;
+	padding: 70px 50px;
+	cursor: pointer;
+	
+	&.slick-next {
+		right: 0;
+	}
+}
+/*********************날씨, 캠핑장예약*******************************/
+.main-container > .wrap {
+	display: flex;
+	margin-top: 80px;
+	justify-content: space-evenly;
+}
+.main-container > .wrap > .api_box {
+	height: 300px;
+}
+.main-container > .wrap > .api_box > a > .api_image {
+	width: 560px;
+	height: 300px;
+}
+.main-container > .wrap > .api_box > a > .api_image > img {
+	border-radius: 20px;
+}
+.main-container > .wrap > .api_box > a >  p {
+	color: #333;
+    font-size: 20px;
+    letter-spacing: -.15px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/************베스트아이템*************************************/
+.best_item_box {
+	margin-top: 100px;
+    padding-top: 100px;
+    border-top: 1px solid #e7e7e7;
+}
+
+.best_item_box>.box_title {
+	font-size: 35px;
+	color: #222222;
+	line-height: 1.1;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+.best_item_box>.best_item_content>.best_item_list>ul {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr auto;
+	row-gap: 45px;
+}
+
+.best_item_box>.best_item_content>.best_item_list>ul>li>a{
+	height: 210px;
+    display: inline-block;
+}
+
+.best_item_box>.best_item_content>.best_item_list>ul>li>a>.item_img {
+	width: 270px;
+	height: 270px;
+}
+.best_item_box>.best_item_content>.best_item_list>ul>li>a>.item_img > img {
+	border-radius: 15px;
+}
+
+.best_item_box>.best_item_content>.best_item_list>ul>li>a>.item_img > img::hover{
+	
+}
+
+.best_item_box>.best_item_content>.best_item_list>ul>li>a>.item_info>.item_title{
+	width: 270px;
+    height: 20px;
+    display: flex;
+    justify-content: left;
+    font-size: 18px;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.best_item_box>.best_item_content>.best_item_list>ul>li>a>.item_info>.item_price {
+	width: 270px;
+	height: 20px;
+	display: flex;
+	font-size: 18px;
+	margin-top: 30px;
+	font-weight: bold;
+}
+
+
+.best_item_box>.best_item_content>.best_button_area {
+	display: flex;
+	justify-content: center;
+	padding-top: 30px;
+}
+
+.best_item_box>.best_item_content>.best_button_area>button {
+	width: 95px;
+	height: 42px;
+	border-radius: 10px;
+	background-color: #fff;
+	border: 1px solid #a9a9a9;
+	color: #484848;
+	cursor: pointer;
+}
+
+.best_item_box>.best_item_content>.best_button_area>button:active {
+	background-color: #e9e9e9;
+	color: #a9a9a9;
+}
+
+/**********************새로운아이템***********************/
+.new_item_box {
+	margin-top: 100px;
+    padding-top: 100px;
+    border-top: 1px solid #e7e7e7;
+}
+
+.new_item_box>.box_title {
+	font-size: 35px;
+	color: #222222;
+	line-height: 1.1;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+.new_item_box>.new_item_content>.new_item_list>ul {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr auto;
+	row-gap: 45px;
+}
+
+.new_item_box>.new_item_content>.new_item_list>ul>li>a{
+	height: 210px;
+    display: inline-block;
+}
+
+.new_item_box>.new_item_content>.new_item_list>ul>li>a>.item_img {
+	width: 270px;
+	height: 270px;
+}
+.new_item_box>.new_item_content>.new_item_list>ul>li>a>.item_img > img {
+	border-radius: 15px;
+}
+
+.new_item_box>.new_item_content>.new_item_list>ul>li>a>.item_info>.item_title,
+.item_price {
+	width: 270px;
+	height: 20px;
+	display: flex;
+	font-size: 18px;
+	margin-top: 30px;
+	font-weight: bold;
+}
+
+
+.new_item_box>.new_item_content>.new_button_area {
+	display: flex;
+	justify-content: center;
+	padding-top: 30px;
+}
+
+.new_item_box>.new_item_content>.new_button_area>button {
+	width: 95px;
+	height: 42px;
+	border-radius: 10px;
+	background-color: #fff;
+	border: 1px solid #a9a9a9;
+	color: #484848;
+	cursor: pointer;
+}
+.new_item_box>.new_item_content>.new_button_area>button:active {
+	background-color: #e9e9e9;
+	color: #a9a9a9;
+}
+
+
+.hidden {
+	display: none;
+}
+
+
+
+.img_Btns{
+	display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    position: relative;
+    left: 0px;
+    bottom: 158px;
+    z-index: 40;
+    width: 270px;
+    height: 60px;
+    flex-direction: row-reverse; 
+    background-color: rgba(255, 255, 255,.7);
+    opacity: 0;
+    transition: all .2s cubic-bezier(.42, .0, .58, 1.0);
+  
+}
+
+.img_Btns > button{
+	
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    position: relative;
+    transition: all .3s cubic-bezier(.42, .0, .58, 1.3);
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    border-radius: 50%;
+    background: #fff no-repeat center center / 20px 20px;
+    border: #e9e9e9;
+    background-image: url("/images/index2/shopping_bag.svg") ;
+    cursor: pointer;
+}
+
+.img_Btns:hover{
+	opacity: 100;
+}
+	

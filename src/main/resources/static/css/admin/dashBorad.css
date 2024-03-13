@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+.dash_board_hd {
+	background-color: #fff;
+	border: 1px solid #dcdcdc;
+	font-weight: bold;
+}
+
+.dash_board_hd > .hd_top {
+	padding: 15px;
+	border-bottom: 1px solid #dcdcdc;
+	height: 60px;
+	display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.dash_board_hd > .hd_bottom {
+	display: flex;
+	align-items: center;
+	padding: 15px;
+	height: 60px;
+}
+
+.dash_board_hd > .hd_bottom > a {
+	margin-right: 5px;
+}

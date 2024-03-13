@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+.admin_button {
+	position: absolute;
+	right: 150px;
+}
+
+h1 {
+	margin-top:70px;
+	text-align: center;
+	font-size:50px;
+}
+main {display: flex;
+	justify-content: center;
+}
+.row {
+	margin-top:20px;
+	display: flex;
+}
+.wrapper {
+	margin-top:50px;
+ }
+ 
+ #left-list {
+	 padding-top:100px;
+ }
+ 
+ #left-list > ul > li {
+	 height:50px;
+	 font-size:20px;
+ }
+
+
+.qnamain {
+	display: flex;
+	flex-direction: column;
+}
+.qna1 > #qnamainsearch {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	margin-top:15px;
+}
+.qnamain > .qna1 {
+	width: 1080px;
+	height: 80px;
+	border: 1px solid red;
+	background-color: #eeeeee;
+	margin: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+}
+
+.qnamain > .wrapper {
+	width: auto;
+	height: auto;
+	display: flex;
+}
+.qnamain > .wrapper  > #left-list {
+	width: 150px;
+	height: 500px;
+	margin-top: 30px;
+}
+.qnamain > .wrapper  > #qnalist1 {
+	width: auto;
+	height: auto;
+	
+}
+.list {
+	display: flex;
+	padding: 5px;
+	color: #666666;
+	border-bottom:1px solid #dddddd;
+	align-items: center;
+	
+}
+.list2 {
+	display: flex;
+	width: 130px;
+	height: 60px;
+	border: 1px solid rgb(238, 238, 238);
+	background-color: #dddddd;
+	cursor: pointer;
+	justify-content: center;
+	align-items: center;	
+}
+
+
+.answer {
+	display: none;
+	background-color: #eeeeee;
+}
+
+.nlist {
+	display: flex;
+	justify-items: center;
+	align-items: center;
+	height: 50px;
+	cursor: pointer;
+}
+.nlist > p {
+	display: block;
+	width: 800px;
+}
+
+#qnalist {
+	margin-top: 30px;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	min-height: 700px;
+}
+#noticelist > li{
+	border-bottom: 1px solid #bbbbbb;	
+}
+.category {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+	height: 20px;
+	background-color: #93a072;
+	margin: 0 5px 0 5px;
+	border-radius : 5px;
+	font-size: 13px;
+	text-align: center;
+}
+
+.searchbar {
+	width:500px;
+	height:30px;
+		margin-bottom:10px;
+
+}
+
+.write {
+	margin-top:15px;
+}

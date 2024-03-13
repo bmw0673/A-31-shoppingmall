@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/layout/admin-layout::layout(~{this::head}, ~{this::admin_main})}">
+
+<head>
+	<link rel="stylesheet" href="/css/admin/dashBorad.css">
+</head>
+
+<body>
+	<th:block th:fragment="admin_main">
+		<div class="dash_board_hd">
+			<div class="hd_top">
+				오늘의 할일
+			</div>
+			<ul class="hd_bottom">
+				<a><li>답변대기 문의</li></a><span> 0</span>
+			</ul>
+		</div>
+	<th:block>
+</body>
+
+</html>

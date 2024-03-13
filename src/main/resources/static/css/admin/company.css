@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+.content{
+	background-color: #fff;
+	display: inline-block;
+	padding: 50px 50px 50px 50px;
+}
+
+.content> form > .wrap {
+    width: 100%;
+    border: 1px solid #222;
+}
+
+.content> form > .wrap > .box {
+	display: flex;
+	height: 60px;
+}
+.content> form > .wrap > .box > .box_left {
+	width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #e4e7e9;
+	font-weight: bold;
+	font-size: 18px;
+	border-right: 1px solid #222;
+	border-bottom: 1px solid #222;
+}
+.content> form > .wrap > .box > .box_left > .annotation {
+	font-size: 12px;
+	text-align: center;
+	line-height: 20px;
+}
+
+.content> form > .wrap > .box:last-child > .box_left{
+	border-bottom: none;
+}
+.content> form > .wrap > .box > .box_right {
+	flex: 1;
+	width: 500px;
+	display: flex;
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+    border-bottom: 1px solid #222;
+}
+.content> form > .wrap > .box:last-child > .box_right{
+	border-bottom: none;
+}
+.box_right > input{
+	height: 100%;
+}
+.box_right > span {
+	padding-left: 5px;
+}
+
+.box_right > input {
+	width: 100%;
+	border: none;
+	font-size: 16px;
+}
+
+.button_area {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 160px;
+}
+.button_area > button {
+	width: 300px;
+    height: 90px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #454545;
+    font-size: 25px;
+    font-weight: 550;
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button_area > button:hover {
+    background-color: #101010; /* hover 시 배경색 변경 */
+}
+
+.box_right > textarea {
+	width: 750px;
+	height: 100px;
+	padding: 10px;
+}
+.hidden {
+	display: none;
+}

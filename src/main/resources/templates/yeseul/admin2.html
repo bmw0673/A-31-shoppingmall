@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/css/yeseul/admin2.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideToggle("slow");
+  });
+});
+</script>
+<script> 
+$(document).ready(function(){
+  $(".flip-menu").click(function(){
+    $(".panel-menu").slideToggle("slow");
+  });
+});
+</script>
+<script> 
+$(document).ready(function(){
+  $(".flip-menu1").click(function(){
+    $(".panel-menu1").slideToggle("slow");
+  });
+});
+</script>
+<script>
+	window.onload=()=>{
+      document.querySelector('.dropbtn_click').onclick = ()=>{
+        dropdown();
+      }
+      document.getElementsByClassName('fastfood').onclick = ()=>{
+        showMenu(value);
+      };
+      dropdown = () => {
+        var v = document.querySelector('.dropdown-content');
+        var dropbtn = document.querySelector('.dropbtn')
+        v.classList.toggle('show');
+        dropbtn.style.borderColor = 'rgb(94, 94, 94)';
+      }
+
+      showMenu=(value)=>{
+        var dropbtn_icon = document.querySelector('.dropbtn_icon');
+        var dropbtn_content = document.querySelector('.dropbtn_content');
+        var dropbtn_click = document.querySelector('.dropbtn_click');
+        var dropbtn = document.querySelector('.dropbtn');
+
+        dropbtn_icon.innerText = '';
+        dropbtn_content.innerText = value;
+        dropbtn_content.style.color = '#252525';
+        dropbtn.style.borderColor = '#3992a8';
+      }
+    }
+    window.onclick= (e)=>{
+      if(!e.target.matches('.dropbtn_click')){
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+
+        var dropbtn_icon = document.querySelector('.dropbtn_icon');
+        var dropbtn_content = document.querySelector('.dropbtn_content');
+        var dropbtn_click = document.querySelector('.dropbtn_click');
+        var dropbtn = document.querySelector('.dropbtn');
+
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<section  class="top">
+		<div class="top1">
+			<img class="logo" src="/images/index2/logo.png">
+			<a href="#"><h1 style="color: whitesmoke;">A.31(avg 31)</h1></a>
+			<a href="#" class="top1-1"><p>쇼핑파트너센터</p></a>
+			<a href="#" class="top1-2"><p>커머스솔루션마켓</p></a>
+			<a class="top1-3"><p>A.31광고</p></a>
+			<div id="flip" class="flip-top">∨
+				<div id="panel"class="panel-top">
+					<a><p>검색광고</p></a>
+					<a><p>display광고</p></a>
+				</div>
+			</div>
+		</div>
+		<div  class="top2">
+			<form>
+				<input id="name" placeholder="사용자이름">
+				<button>내정보</button>
+				<button>로그아웃</button>
+				<button>도움말</button>
+			</form>
+		</div>
+	</section>
+	<section class="main">
+		<div class="main-left">
+			<form class="main-left-1">
+				  <select id="fruit" name="fruit">
+				    <option value="">조회</option>
+				      <option>수취인명</option>
+				      <option>구매자명</option>
+				      <option>구매자연락처</option>
+				      <option>구매자ID</option>
+				      <option>상품주문번호</option>
+				      <option>상품번호</option>
+				      <option>운송장번호</option>
+				  </select>
+			</form>
+			<div class="seller-input-wrap">
+				<input type="text" >
+				<button><img src="/images/index2/search_FILL0_wght400_GRAD0_opsz24.png"></button>
+			</div>
+			<div class="main-menu1">
+				<a class="main-menu"><p style="color: #fff;">상품등록</p></a>
+				<div id="flip" class="flip-menu">∨
+					<div id="panel"class="panel-menu">
+						<a><p>상품등록</p></a>
+						<a><p>상품조회</p></a>
+					</div>
+				</div>
+			</div>	
+			<div class="main-menu2">
+				<a class="main-menu"><p style="color: #fff;">판매관리</p></a>
+				<div id="flip" class="flip-menu1">∨
+					<div id="panel"class="panel-menu1">
+						<a><p>주문통합검색</p></a>
+						<a><p>배송현황관리</p></a>
+						<a><p>반품관리</p></a>
+						<a><p>교환관리</p></a>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<div class="main-right">2</div>
+		
+		
+				
+	</section>
+</body>
+</html>

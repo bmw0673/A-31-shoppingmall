@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/my-layout::layout(~{this::head}, ~{this::main})}">
+
+<head>
+	<link rel="stylesheet" href="/css/sign/login.css">
+	<title>로그인</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="/js/login.js"></script>
+</head>
+
+<main>
+	<div class="container__1"> <!--전체 폼1-->
+		<div class="container__2"> <!--전체 폼2-->
+			<div class="container__3">  <!--이메일 로그인 문구-->
+				이메일 로그인
+			</div>
+			<div class="DivisionLine__1"></div> <!--구분선 1-->
+			<div class="container__4"> <!--내용물-->
+				<form action="/login" method="post"> <!--로그인 폼-->
+					<div class="container__5"> <!--이메일-->
+						<div class="container__5__1 label__style">
+							<label>이메일</label>
+						</div>
+						<div class="container__5__2">
+							<input type="text" onblur="emailCheck(this)" class="input__style" id="email__lid" name="email" placeholder="example@a31.com"  />
+							<p class="msg email-msg" ></p>
+						</div>
+					</div>
+					<div class="container__6"> <!--비밀번호-->
+						<div class="container__6__1 label__style">
+							<label>비밀번호</label>
+						</div>
+						<div class="container__6__2">
+							<input type="password" onblur="passwordCheck(this)" class="input__style" id="password__lid" name="password" placeholder="비밀번호 8자 이상"  />
+							<p class="msg password-msg" ></p>
+						</div>
+					</div>
+					<div class="DivisionLine__2"></div> <!--구분선 1-->
+					<div class="container__7"> <!--로그인-->
+						<button type="submit">로그인</button>
+					</div>
+					<div class="container__8"> <!--간편로그인 문구-->
+						<div class="container__8__1">
+							간편로그인
+						</div>
+					</div>
+					<div class="container__9"> <!--간편로그인 아이콘-->
+						<div class="container__9__1">
+							<a class="login__logo" href="/oauth2/authorization/google"><img class="login__logo" src="/images/sign/login/google_login.png"></a>
+						</div>
+						<div class="container__9__2">
+							<a class="login__logo" href="/oauth2/authorization/naver"><img class="login__logo" src="/images/sign/login/naver_login.png"></a>
+						</div>
+						<div class="container__9__3">
+							<a class="login__logo" href="/oauth2/authorization/kakao"><img class="login__logo" src="/images/sign/login/kakao_login.png"></a>
+						</div>
+					</div>
+					<div class="container__last"> <!--이메일/비밀번호 찾기 및 회원가입-->
+						<div class="container__last__1">
+							<div class="container__last__1__1">
+								<a href="#" class="atag__style__1">이메일 찾기</a>
+							</div>
+							<div class="container__last__1__2">
+								<a href="#" class="atag__style__2">|</a>
+							</div>
+							<div class="container__last__1__3">
+								<a href="#" class="atag__style__1">비밀번호 찾기</a>
+							</div>
+							<div class="container__last__1__4">
+								<a href="#" class="atag__style__2">|</a>
+							</div>
+							<div class="container__last__1__5">
+								<a href="/join" class="atag__style__1">회원가입</a>
+							</div>
+						</div>
+					</div>
+					
+				</form>
+			</div>
+		</div>
+	</div>
+</main>
+
+</html>

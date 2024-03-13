@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/my-layout::layout(~{this::head}, ~{this::main})}">
+
+<head>
+	<link rel="stylesheet" href="/css/shopingbasket/shopingbasket.css">
+	<script src="/js/shopingbasket.js"></script>
+</head>
+
+<main>
+	<div class="container border">
+		<div class="shop-head">
+			<h2>장바구니</h2>
+		</div>
+		<section class="cart-list-box border">
+			<div class="cart-list-box-left border">
+				<div>
+					<div class="left-title">
+						<h2>일반배송</h2>
+						<p>장바구니에 담긴 상품은 1달간 보관되며, 이후 삭제됩니다.</p>
+					</div>
+					<div class="cart-controller border">
+						<div class="all-select border">
+							<input type='checkbox' name='cart' value='selectall' onclick='selectAll(this)'/> 
+							<b>전체선택</b>
+						</div>
+						<div class="btns border">
+							<a href="#" class="btn_all_del">전체상품삭제</a>
+							<a href="#" class="btn_sel_del">선택상품삭제</a>
+						</div>
+					</div>
+					<div class="cart-content border">
+						<div class="listLi border">
+							<input type='checkbox' name='cart' class="listLi-check"/>
+								<div class="listLi-img border">
+									<section class="listLi-img2 border">이미지</section>
+									<div class="listLi-name border">물건이름</div>
+								</div>
+							<div class="listLi-count border">
+								<a class="btn_down btnDown" href="#" title="수량 빼기">
+									<span class="blind">수량 빼기</span>
+								</a>
+								<input type="text" class="quantity" value="1" readonly="readonly">
+								<a class="btn_up btnUp" href="#" title="수량 더하기">
+									<span class="blind">수량 더하기</span>
+								</a>
+							</div>
+							<div class="listLi-disc border">할인</div>
+							<div class="listLi-price border">금액</div>
+							<div class="listLi-del border">
+								<a href="#" class="btn_del btnDeleteRow" title="삭제하기">
+									<span class="blind">삭제</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="total-price">
+					<ul>
+						<li class="price_product">
+							<p>총 상품금액</p>
+							<strong>
+								<span class="totalPrice"></span>
+								원
+							</strong>
+						</li>
+						<li class="price_sale">
+							<p>총 할인금액</p>
+							<strong>
+								<span class="totalDiscount"></span>
+								원
+							</strong>
+						</li>
+						<li class="price_delivery">
+							<p>총 배송비</p>
+							<strong>
+								<span class="totalDeliveryPrice"></span>
+								원
+							</strong>
+						</li>
+						
+						<li class="price_total">
+							<p>총 주문금액</p>
+							<strong>
+								<span class="totalPayment"></span>
+								원
+							</strong>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="cart-list-box-right border">
+				<section class="deliveryAdd_right">
+					<p class="adress">배송지</p>
+					<p>서울시 노원구 섬밭로 229, 5동 411호</p>
+				</section>
+				<ul class="cartTotalList">
+					<li>
+						<p>총 상품금액</p>
+						<strong>
+							<span class="totalPrice"></span>
+							원
+						</strong>
+					</li>
+					<li>
+						<p>총 할인금액</p>
+							<strong>
+								<span class="totalDiscount"></span>
+								원
+							</strong>
+					</li>
+					<li>
+						<p>총 배송비</p>
+							<strong>
+								<span class="totalDeliveryPrice"></span>
+								원
+							</strong>
+					</li>
+					<p class="freeDelivery_oasis">(
+						<span class="freeDelivery_oasis_price">50,000</span>
+							원 이상 구매시 
+						<b>배송비 무료</b>)
+					</p>
+					<li>
+						<p>총 주문금액</p>
+							<strong>
+								<span class="totalPayment"></span>
+								원
+							</strong>
+					</li>
+				</ul>
+				<div class="cart_order_btns">
+					<a class="btn_orderSelect" href="#" onclick="order(); return false;">주문하기</a>
+				</div>
+			</div>
+		</section>
+	</div>
+	
+	
+</main>
+
+</html>

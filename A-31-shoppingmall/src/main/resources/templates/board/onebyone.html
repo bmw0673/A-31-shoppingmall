@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html xmln:th="http://www.thymeleaf.org" th:replace="~{layout/my-layout::layout(~{this::head}, ~{this::main})}">
+
+<head>
+
+	<link rel="stylesheet" href="/css/board/onebyone.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script>
+		$('.text_area').keyup(function (e) {
+			var content = $(this).val();
+			$('#counter').text("(" + content.length + "/최대 2000자");
+			
+		})
+	</script>
+</head>
+
+<main>
+	<div>
+		<h1>1:1문의</h1>
+
+		<div class="목록list">
+			<ul class="ul">
+				<li><button type="button" class="menu_button"><a href="/notice"><span>FAQ</span></a></button></li>
+				<li><button type="button" class="menu_button"><a href="/notice_2"><span>공지사항</span></a></button>
+				</li>
+				<li><button type="button" class="menu_button"><a href="/onebyone"><span>1:1문의</a></span></button>
+				</li>
+				<li><button type="button" class="menu_button"><a href="/review"><span>리뷰게시판</span></a></button></li>
+			</ul>
+		</div>
+
+
+		<div>
+			<h2>문의내용</h2>
+			<table class="table">
+				<colgroup>
+					<col width=200px style="background:darkolivegreen" />
+					<col width=700px style="background:beige" />
+				</colgroup>
+				<thead>
+					<tr>
+						<td class="td_1">분류</td>
+						<td class="td_2">
+							<select>
+								<option>이거?</option>
+								<option>저거?</option>
+								<option>요거?</option>
+							</select>
+							<select>
+								<option>이거?</option>
+								<option>저거?</option>
+								<option>요거?</option>
+							</select>
+						</td>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td class="td_1">제목</td>
+						<td class="td_2"><input type="text" class="제목" placeholder="제목을 입력하시오"></td>
+					</tr>
+					<tr>
+						<td class="td_1">뭐꼬</td>
+						<td class="td_2">
+							<div>
+								<textarea placeholder="입력하시오" class="text_area" maxlength="2000"></textarea>
+							</div>
+							<div>
+								<p>줄포함
+									<span id="counter">자</span>
+								</p>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_1">첨부파일</td>
+						<td class="td_2">
+							<div>
+								<input type="file" id="file" name="file">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_1">답변수신여부</td>
+						<td class="td_2">
+							<label><input type="checkbox">해줘</label>
+							<label><input type="checkbox">말아</label>
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+
+
+	</div>
+</main>
+
+</html>

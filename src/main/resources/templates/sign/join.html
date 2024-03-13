@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/my-layout::layout(~{this::head}, ~{this::main})}">
+
+<head>
+	<link rel="stylesheet" href="/css/sign/join.css">
+	<title>회원가입</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<!--<script src="/js/join.js"></script>-->
+</head>
+
+<main>
+	<div class="Jpage"> <!--전체-->
+		<div class="JContainerT"> <!--상단-->
+				회원가입
+		</div>
+		<div class="JContainerB"> <!--하단-->
+			<form id="form" action="/join" method="post"> <!--폼-->
+				<div class="JContainer__1"> <!--폼 항목 1-->
+					<div class="JContainer__1__1">
+						<span class="asterisk">*</span>
+						필수입력사항
+					</div>
+				</div>
+				<div class="DivisionLine__1"></div> <!--구분선 1-->
+				<div class="JContainer__2 box__form__1"> <!--폼 항목 2-->
+					<div class="JContainer__2__1 box__form__2">
+						<label>
+							이메일
+							<span class="asterisk">*</span>
+						</label>
+					</div>
+					<div class="JContainer__2__3">
+						<div class="JContainer__2__2 box__form__3">
+							<input type="email"  class="input__form__1" id="email__jid" name="email" placeholder="이메일 형식 입력 (ex.example@a31.com)" />
+							<br>
+							<p class="msg email-msg" ></p>
+						</div>
+						<div class="emailAuth">
+							<button type="button" name="JEmailAuth" id="emailAuth_jid" onclick="emailAuthNum()">인증</button>
+							<!--<script>
+								function emailAuthNum(){
+									$.ajax({
+										url:"/join/mail",
+										type:"post",
+										dataType:"json",
+										data:{mail:$("#email__jid").val().trim()},
+										success: function(){}
+									});
+								}
+							</script>!-->
+						</div>
+					</div>
+				</div>
+				<div class="JContainer__22 box__form__1"><!-- 폼 항목 22-->
+					<div class="JContainer__22__1 box__form__2" >
+						<input type="text" class="mailauthnum" placeholder="인증번호 6자리 입력" maxlength="6">
+						<button type="button" name="JEmailAuthChk" id="emailAuthchk_jid">확인</button>
+					</div>
+				</div>
+				<div class="JContainer__3 box__form__1"> <!--폼 항목 3-->
+					<div class="JContainer__3__1 box__form__2">
+						<label>
+							비밀번호
+							<span class="asterisk">*</span>
+						</label>
+					</div>
+					<div class="JContainer__3__2  box__form__3">
+						<input type="password" class="input__form__1" id="password__jid" name="password" placeholder="비밀번호 입력 (영문, 숫자, 특수기호 포함 8자리 이상)" />
+						<br>
+						<p class="msg password-msg" ></p>
+					</div>
+				</div>
+				
+				<!--<div class="JContainer__4 box__form__1"> 폼 항목 4
+					<div class="JContainer__4__1 box__form__2">
+						<label>
+							비밀번호확인
+							<span class="asterisk">*</span>
+						</label>
+					</div>
+					<div class="JContainer__4__2  box__form__3">
+						<input type="password"  class="input__form__1" id="passwordCheck__jid" name="JPasswordCheck" placeholder="비밀번호확인 입력"/>
+						<br>
+						<p class="msg passwordCheck-msg" ></p>
+					</div>
+				</div>-->
+				
+				<!--<div class="JContainer__5 box__form__1"> 폼 항목 5
+					<div class="JContainer__5__1 box__form__2">
+						<label>
+							이름
+							<span class="asterisk">*</span>
+						</label>
+					</div>
+					<div class="JContainer__5__2  box__form__3">
+						<input type="text" onblur="nameCheck(this)" id="name__jid" class="input__form__1" name="JName" placeholder="실명 입력 (한글 이름 2~4자 이내)"/>
+						<p class="msg nameCheck-msg" ></p>
+					</div>
+				</div>
+				
+				<div class="JContainer__6 box__form__1"> 폼 항목 6
+					<div class="JContainer__6__1 box__form__2">
+						<label>
+							연락처
+							<span class="asterisk">*</span>
+						</label>
+					</div>
+					<div class="JContainer__6__2  box__form__4">
+						<div class="JContainer__6__2__1">
+							<select name="JTelecom">
+								<option value="SKT">SKT</option>
+								<option value="KT">KT</option>
+								<option value="LGU+">LGU+</option>
+								<option value="알뜰폰">알뜰폰</option>
+							</select>
+						</div>
+						<div class="JContainer__6__2__2">
+							<input type="text" onblur="phonenumCheck(this)" id="phonenum__jid" class="input__form__1" name="JPhonenum" placeholder="연락처 입력 (ex.000-0000-0000)" />
+							<p class="msg phonenumCheck-msg" ></p>
+						</div>
+						<div class="JContainer__6__2__3">
+						<button type="button">인증</button>
+						</div>
+					</div>
+				</div>
+				
+				<div class="JContainer__7 box__form__1"> 폼 항목 7
+					<div class="JContainer__7__1 box__form__2">
+						<label>
+							닉네임
+							<span class="asterisk">*</span>
+						</label>
+					</div>
+					<div class="JContainer__7__2  box__form__3">
+						<input type="text" onblur="nickNameCheck(this)" id="nickName__jid" class="input__form__1" name="JNickname" placeholder="닉네임 입력 (2자 이상 16자 이하, 영어 또는 숫자 또는 한글)"/>
+						<p class="msg nickNameCheck-msg" ></p>
+					</div>
+				</div>
+				
+				<div class="JContainer__8 box__form__1"> 폼 항목 8
+					<div class="JContainer__8__1 box__form__2">
+						<label>
+							생년월일
+							<span class="asterisk">*</span>
+						</label>
+					</div>
+					<div class="JContainer__8__2  box__form__3">
+							<input type="text" onblur="birthDateCheck(this)" id="birthDate__jid" class="input__form__1" name="JBirthdate" placeholder="생년월일 8자리 입력 (ex.00001122)"/>
+							<p class="msg birthDateCheck-msg" ></p>
+					</div>
+				</div>-->
+				
+				<!--<div class="JContainer__9 box__form__1"> 폼 항목 9
+					<div class="JContainer__9__1 box__form__2">
+						<label>
+							성별
+							<span class="asterisk">*</span>
+						</label>
+					</div>
+					<div class="JContainer__9__2  box__form__3">
+						<div class="JContainer__9__2__1">
+							<div class="JContainer__9__2__1__1">
+								<input type="radio" class="sex" name="JSex" value="M" /> 남성
+							</div>
+							<div class="JContainer__9__2__1__2">
+								<input type="radio" class="sex" name="JSex" value="F" /> 여성
+							</div>
+						</div>
+					</div>
+				</div>-->
+				
+				<div class="DivisionLine__1"></div> <!--구분선 2-->
+				
+				<div class="JContainer__10">
+					<button type="submit">가입하기</button>
+				</div>
+				
+			</form>
+		</div>
+	</div>
+</main>
+
+</html>

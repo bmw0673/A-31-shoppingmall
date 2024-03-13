@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/my-layout::layout(~{this::head}, ~{this::main})}">
+<head>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	 <script src="/js/chat-bot.js"></script>
+	<link rel="stylesheet" href="/css/yeseul/chat-bot.css">
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<main>
+	<button onclick="btnBotClicked()" id="chat-button"></button>
+	 <div id="chat-container">
+		<div id="chat-head">
+			<a id="chat-head-search" href="#" onclick="searchbarClicked()"></a>
+			<input type="text" id="chat-head-search-bar">
+			
+			<button onclick="btnCloseClicked()"></button>
+			
+		</div>
+        <div id="chat-messages">
+			
+		</div>
+        <div id="user-input">
+			<a href="/"></a>
+            <input type="text" placeholder="메시지를 입력하세요" />
+            <button>전송</button>
+        </div>
+    </div>
+   
+</main>
+</html>

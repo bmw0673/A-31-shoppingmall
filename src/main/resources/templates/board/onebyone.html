@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/my-layout :: layout(~{this::head},~{this::main} )}">
+
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/css/board/onebyone.css">
+	<script>
+
+		$(function () {
+			$(".nlist").click(clickedBtnFContent);
+			$(".list2").click(clickedBtnBGcolor);
+		});
+		function clickedBtnFContent() {
+			$(this).siblings('.answer').slideToggle(0);
+		}
+	</script>
+</head>
+
+<main>
+
+	<body>
+		<div>
+			<h1>1:1문의게시판</h1>
+
+			<div class="qnamain mid">
+
+				<div class="wrapper">
+					<div id="left-list">
+						<ul>
+							<li><a class="list" href="/notice">공지사항</a></li>
+							<li><a class="list" href="/notice_2">FAQ</a></li>
+							<li><a class="list" href="/onebyone">1:1문의</a></li>
+						</ul>
+					</div>
+					<div id="qnalist1">
+						<div>
+							<ul class="row">
+								<li><a class="list2 " href="#">전체</a></li>
+								<li><a class="list2 " href="#">회원가입/정보</a></li>
+								<li><a class="list2 " href="#">결제/배송</a></li>
+								<li><a class="list2 " href="#">교환/반품/환불</a></li>
+								<li><a class="list2 " href="/onebyone">1:1문의</a></li>
+								<li><a class="list2 " href="#">A/S</a></li>
+								<li><a class="list2 " href="#">기타</a></li>
+							</ul>
+						</div>
+						<div class="qna1">
+
+							<div id="qnamainsearch">
+								<div>
+									<input type="search" class="searchbar" placeholder="검색어를 입력하세요" />
+									<button type="submit" placeholder="검색"> 검색</button>
+									<p>더 궁금한 점이 있거나, 이미 문의한 질문의 답변을 확인하려면?</p>
+								</div>
+								<a href="/write" style="margin-top:5px;">1:1문의 바로가기</a>
+							</div>
+							<div>
+								<ul class="asklist">
+									<li th:each="ask : ${asklist}">
+
+										<div class="nlist">
+											<div class="category">
+												1:1문의사항
+											</div>
+												[[${ask.title}]]
+											</div>
+											<div class="answer">
+												[(${ask.content})]
+											</div>
+
+									</li>
+
+
+								</ul>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+	</body>
+</main>
+
+</html>

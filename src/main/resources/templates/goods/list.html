@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/my-layout::layout(~{this::head}, ~{this::main})}">
+
+<head>
+	<link rel="stylesheet" href="/css/goods/list.css">
+</head>
+
+<body>
+	<main>
+		<div class="main_container">
+			<h2 class="content_title">
+				[[${cate.cateName}]]
+			</h2>
+			<div class="content">
+				<ul class="cate-area">
+					<li>
+						<a th:href="@{/goods/list(cateId=${cateIdParent.cateId})}">전체보기</a>
+					</li>
+					<li th:each="cate : ${cateIdChild}">
+						<a th:href="@{/goods/list(cateId=${cate.cateId})}">[[${cate.cateName}]]</a>
+					</li>
+				</ul>
+				<div class="goods-info">
+					<div class="count">
+						<span>총</span>
+						<span class="bold">[[${list.totalElements}]]</span>
+						<span>개</span>
+					</div>
+					<div class="sort">
+						<select>
+							<option>상품정렬</option>
+							<option>신상품</option>
+							<option>인기상품</option>
+							<option>낮은가격</option>
+							<option>높은가격</option>
+						</select>
+					</div>
+				</div>
+				<ul class="item_list">
+					<li th:each="goods : ${list.dtoList}">
+						<a th:href="@{|/goods/${goods.no}|}">
+							<div class="item_img">
+								<img
+									th:src="|//s3.ap-northeast-2.amazonaws.com/yeseul.green.bucket/${goods.imgs.get(0).bucketKey}|">
+							</div>
+							<div class="item_info">
+								<p class="item_title">[[${goods.name}]]</p>
+								<p class="item_price">[[${#numbers.formatInteger(goods.price, 3,
+									'COMMA')}]]<span>&#8361;</span></p>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<div class="paging">
+					<ul class="page-list">
+						<li class="page-item" th:if="${list.prev}">
+							<a class="page-link" th:href="@{/goods/list(page=${list.start -1})}"
+								tabindex="-1">Previous</a>
+						</li>
+
+						<li th:each="page:${list.pageList}">
+							<a th:href="@{/goods/list(cateId=${cate.cateId}, page=${page})}">[ [[${page}]] ]
+							</a>
+						</li>
+
+						<l1 class="page-item" th:if="${list.next}">
+							<a class="page-link" th:href="@{/goods/list(page=${list.end+1})}">[ Next ]</a>
+						</l1>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>

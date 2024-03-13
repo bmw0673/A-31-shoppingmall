@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="layout(myhead, mymain)">
+<head>
+	<meta charset="UTF-8">
+	<title>A31</title>
+	<link rel="stylesheet" href="/css/layout/reset.css">
+	<link rel="stylesheet" href="/css/layout/header.css">
+	<link rel="stylesheet" href="/css/layout/footer.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nunito+Sans:opsz,wght@6..12,300&family=Quicksand&display=swap" rel="stylesheet">
+	<th:block th:replace="${myhead}"></th:block>
+</head>
+<body>
+	<th:block th:replace="~{layout/header::header}"></th:block>
+	
+	<th:block th:replace="${mymain}"></th:block>
+	
+	<footer class="footer"></footer>
+	
+	<script>
+		//=======헤더 카테고리 배너 url값 매핑======//
+		$(function(){
+			$.ajax({
+				url: '/header',
+				dataType : 'json',
+                method: 'GET',
+                success: function(result) {
+					$('.tent').attr('href', `/goods/list?cateId=${result.텐트}`);
+					$('.sleepBag').attr('href', `/goods/list?cateId=${result.침낭}`);
+					$('.kitchen').attr('href', `/goods/list?cateId=${result.키친}`);
+					$('.acc').attr('href', `/goods/list?cateId=${result.ACC}`);
+					$('.light').attr('href', `/goods/list?cateId=${result.조명}`);
+			}})
+		})
+		
+		//==========footer modelView===============//
+		$(function(){
+			$.ajax({
+				url: '/footer',
+                method: 'GET',
+                success: function(result) {
+                  $(".footer").html(result)
+			}})
+		})
+	</script>
+</body>
+
+
+</html>

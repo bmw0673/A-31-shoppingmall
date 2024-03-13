@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<header> 
+	<section class="header">
+		<div class="hd_container">
+			<ul class="hd_top">
+				<li sec:authorize="isAnonymous()">
+					<a href="/login">
+						<img src="/images/index/login-icon.png" alt="My Page Icon">
+					</a>
+				</li>
+				<li sec:authorize="isAuthenticated()">
+					<a href="/logout">
+						<img src="/images/index/logout-icon.png" alt="My Page Icon">
+					</a>
+				</li>
+				<li sec:authorize="hasRole('ADMIN')">
+					<a href="/admin">
+						<img src="/images/logos/master.png" alt="Master Icon">
+					</a>
+				</li>
+				<li>
+					<a href="/myPage/main">
+						<img src="/images/logos/mypage.png" alt="My Page Icon">
+					</a>
+				</li>
+				<li>
+					<a href="/cart">
+						<img src="/images/logos/cart.png" alt="Cart Icon">
+					</a>
+				</li>
+				<li>
+					<a href="/notice">
+						<img src="/images/logos/cs.png" alt="CS Icon">
+					</a>
+				</li>
+			</ul>
+			<div class="logo_area">
+				<a href="/" class="logo">
+					<img src="/images/logos/logo.png" alt="A31Logo">
+				</a>
+			</div>
+			<nav class="hd_bottom">
+				<ul class="navigation">
+					<li>
+						<a class="tent">텐트</a>
+					</li>
+					<li>
+						<a class="sleepBag">침낭</a>
+					</li>
+					<li>
+						<a class="kitchen">키친</a>
+					</li>
+					<li>
+						<a class="acc">ACC</a>
+					</li>
+					<li>
+						<a class="light">조명</a>
+					</li>
+					<li class="recommend">
+						<a href="#">행사</a>
+					</li>
+				</ul>
+				<form class="search">
+					<input type="text">
+					<button type="button">
+						<img src="/images/logos/search.png">
+					</button>
+				</form>
+			</nav>
+		</div>
+	</section>
+</header>
+
+
+</html>

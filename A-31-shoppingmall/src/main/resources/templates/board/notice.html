@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+
+<html xmln:th="http://www.thymeleaf.org" th:replace="~{layout/my-layout::layout(~{this::head}, ~{this::main})}">
+
+<head>
+	<link rel="stylesheet" href="/css/board/notice.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$("#질문").click(function () {
+				$("#답변").slideToggle("slow");
+			});
+		});
+	</script>
+</head>
+
+<main>
+	<h1>FAQ</h1>
+	<div class="목록list">
+		<ul class="ul">
+			<li><button type="button" class="menu_button"><a href="/notice"><span>FAQ</span></a></button></li>
+			<li><button type="button" class="menu_button"><a href="/notice_2"><span>공지사항</span></a></button></li>
+			<li><button type="button" class="menu_button"><a href="/onebyone"><span>1:1문의</a></span></button></li>
+			<li><button type="button" class="menu_button"><a href="/review"><span>리뷰게시판</span></a></button></li>
+		</ul>
+	</div>
+
+	<div class="wrapper">
+		<div class="search_bar">
+			<div class="more">
+				<select>
+					<option>선택하세요</option>
+					<option>제목</option>
+					<option>제목+내용</option>
+				</select>
+				<input type="text" id="검색" placeholder="왼쪽놈은 질문분류선택">
+
+				<div>
+					<input type="submit" id="제출">
+				</div>
+			</div>
+
+		</div>
+		<div>
+			<table class="질문목록">
+				<colgroup>
+					<col width=90px />
+					<col width=90px />
+					<col width=600px />
+					<col width=120px />
+				</colgroup>
+				<thead>
+					<tr class="tr_1st">
+						<td id="thead0">번호</td>
+						<td id="thead1">구분</th>
+						<td id=>자주 묻는 질문</th>
+						<td id="thead3">작성자</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td id="thead0">1</td>
+						<td id="thead1">배송</td>
+						<td id="thead2"><img id="qa" src="/images/board/qa.svg">
+							<div id="질문">평균 배송일이 얼마인가요?
+								<div id="답변">
+									7일? @@답변길어지면 표 변형일어나는거 고치기답변길어지면 표 변형일어나는거 고치기답변길어지면 표 변형일어나는거 고치기답변길어지면 표 변형일어나는거
+									고치기답변길어지면 표 변형일어나는거 고치기답변길어지면 표 변형일어나는거 고치기답변길어지면 표 변형일어나는거 고치기답변길어지면 표 변형일어나는거 고치기
+								</div>
+							</div>
+
+						</td>
+						<td id="thead3">이아무개</thd>
+					</tr>
+					<tr>
+						<td id="thead0">2</td>
+						<td id="thead1">상품</td>
+						<td id="thead2">
+							<img id="qa" src="/images/board/qa.svg">이게 저한테 맞을까요?
+						
+						</td>
+						<td id="thead3">김아무개</td>
+					</tr>
+					<tr>
+						<td id="thead0">번호</td>
+						<td id="thead1">구분</th>
+						<td id="thead2">
+						<td id="thead3">
+					</tr>
+					<tr>
+						<td id="thead0">번호</td>
+						<td id="thead1">구분</th>
+						<td id="thead2">
+						<td id="thead3">
+					</tr>
+
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+</main>
+
+</html>

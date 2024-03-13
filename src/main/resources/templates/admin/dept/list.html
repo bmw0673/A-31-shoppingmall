@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{admin/layout/admin-layout::layout(~{this::head}, ~{this::admin_main})}">
+
+<head>
+	<link rel="stylesheet" href="/css/admin/dept.css">
+</head>
+
+<body>
+	<th:block th:fragment="admin_main">
+		<h2 class="admin_list_title">부서등록</h2>
+		<div class="content">
+			<form method="post" action="/admin/dept">
+				<table class="table">
+					<tr>
+						<th>부서이름</th>
+						<td><input name="name" placeholder="개발부서" required></td>
+					</tr>
+					<tr>
+						<th>부서번호</th>
+						<td><input name="externalKey" placeholder="dept0002" required></td>
+					</tr>
+					<tr>
+						<th>부서순서</th>
+						<td><input name="dispOrd" placeholder="ex) 1, 2" required></td>
+					</tr>
+					<tr>
+						<th>상위부서</th>
+						<td>
+							<select name="parentDeptExternalKey">
+								<option th:each="dto:${list}" th:value="${dto.externalKey}">[[${dto.name}]]</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+				<div class="btn-area">
+					<button>저장</button>
+				</div>
+			</form>
+		</div>
+		<h2 class="admin_list_title br">부서조회</h2>
+		<div class="content">
+			<table class="table">
+				<thead>
+					<tr>
+						<th class="dept-read-th">부서번호</th>
+						<th class="dept-read-th">부서이름</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="dto:${list}">
+						<td>[[${dto.externalKey}]]</td>
+						<td>[[${dto.name}]]</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<script>
+
+			document.addEventListener("DOMContentLoaded", function () {
+				const departments = document.querySelectorAll(".department");
+				const teams = document.querySelectorAll(".team");
+				teams.forEach((team) => {
+					team.addEventListener("click", function (event) {
+						// 팀 클릭 시 이벤트 처리
+						event.stopPropagation(); // 이벤트 전파 방지
+					});
+				});
+
+				departments.forEach((department) => {
+					department.addEventListener("click", function () {
+						this.querySelector(".team").classList.toggle("expanded");
+					});
+				});
+			});
+		</script>
+	</th:block>
+</body>
+
+</html>

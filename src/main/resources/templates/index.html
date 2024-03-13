@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/my-layout::layout(~{this::head}, ~{this::main})}">
+
+<head>
+	<link rel="stylesheet" href="/css/index.css">
+	<!--구글폰트-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nunito+Sans:opsz,wght@6..12,300&family=Quicksand&display=swap"
+		rel="stylesheet">
+
+	<!-- Slick-Slider-->
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script src="/js/slick-slider.js"></script>
+
+	<script src="/js/item-more-btn.js"></script>
+	<script th:inline="javascript">
+	   var auth=/*[[${param.auth}]]*/null;
+	   if(auth!=null)alert("이미 로그인 중입니다.")
+   </script>
+	<link rel="stylesheet" href="/css/yeseul/chat-bot.css">
+	
+</head>
+
+<body>
+	<main>
+		<div style="position: relative;">
+			<ul class="slider">
+				<li>
+					<img src="/slide/slide1.png">
+				</li>
+				<li>
+					<img src="/slide/slide2.png">
+				</li>
+				<li>
+					<img src="/slide/slide4.png">
+				</li>
+				<li>
+					<img src="/slide/slide5.png">
+				</li>
+			</ul>
+			<div class="slick-arrow slick-prev">
+				<img src="/images/index/slide_prev_w.png">
+			</div>
+			<div class="slick-arrow slick-next">
+				<img src="/images/index/slide_next_w.png">
+			</div>
+		</div>
+		<div class="main-container">
+			<div class="wrap">
+				<div class="api_box">
+					<a href="https://www.oasis.co.kr/main" target="_blank">
+						<div class="api_image weather">
+							<img src="/images/index/oasis_market.png">
+						</div>
+						<p>
+							새벽 배송 받기
+						</p>
+					</a>
+				</div>
+				<div class="api_box">
+					<a href="https://www.campingtalk.me/" target="_blank">
+						<div class="api_image camp">
+							<img src="/images/index/camping_picture.png">
+						</div>
+						<p>
+							캠핑장 예약하기
+						</p>
+					</a>
+				</div>
+			</div>
+			<div class="best_item_box">
+				<h2 class="box_title">
+					MD추천
+				</h2>
+				<div class="best_item_content">
+					<div class="best_item_list">
+						<ul>
+							<li th:each="goods : ${mdList}" class="hidden goods">
+								<a th:href="@{|/goods/${goods.no}|}">
+									<div class="item_img">
+										<img
+											th:src="|//s3.ap-northeast-2.amazonaws.com/yeseul.green.bucket/${goods.imgs.get(0).bucketKey}|">
+									</div>
+									
+									<div class="item_info">
+										<p class="item_title">[[${goods.name}]]</p>
+										<p class="item_price"><span>&#8361;</span>[[${#numbers.formatInteger(goods.price, 3,
+											'COMMA')}]]</p>
+										
+									</div>
+									</a>
+									<div class="img_Btns">
+										<input type="hidden" th:value="${goods.no}" class="goods-no">
+										<button id="cart_btn1" onclick="cartBtn1(this,event)" ></button>
+									</div>	
+								
+							</li>
+						</ul>
+					</div>
+					<div class="best_button_area">
+						<button id="bestMoreBtn" class="btn">더보기</button>
+					</div>
+				</div>
+			</div>
+			<div class="new_item_box">
+				<h2 class="box_title">
+					NEW
+				</h2>
+				<div class="new_item_content">
+					<div class="new_item_list">
+						<ul>
+							<li th:each="goods : ${newList}" class="hidden goods">
+								<a th:href="@{|/goods/${goods.no}|}" >
+									<div class="item_img">
+										<img 
+											th:src="|//s3.ap-northeast-2.amazonaws.com/yeseul.green.bucket/${goods.imgs.get(0).bucketKey}|">
+									</div>
+									<div class="item_info">
+										<p class="item_title">[[${goods.name}]]</p>
+										<p class="item_price"><span>&#8361;</span>[[${#numbers.formatInteger(goods.price, 3,
+											'COMMA')}]]</p>
+									</div>
+								</a>
+								<div class="img_Btns">
+									<button id="cart_btn2" onclick="cartBtn2(this,event)"></button>
+								</div>	
+								
+							</li>
+						</ul>
+					</div>
+					<div class="new_button_area">
+						<button id="newMoreBtn" class="btn">더보기</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button onclick="btnBotClicked()" id="chat-button"></button>
+		<div id="chat-container">
+		<div id="chat-head">
+			<a id="chat-head-search" href="#" onclick="searchbarClicked()"></a>
+			<input type="text" id="chat-head-search-bar">
+			<button onclick="btnCloseClicked()"></button>
+		</div>
+        <div id="chat-messages">
+		</div>
+        <div id="user-input">
+			<a href="/"></a>
+            <input type="text" placeholder="메시지를 입력하세요" />
+            <button>전송</button>
+        </div>
+    </div>
+   <script src="/js/chat-bot.js"></script>
+
+   <script>
+	
+  function cartBtn1(btn,event) {
+    event.preventDefault();
+
+    $(function(){
+		var itemId = $(btn).siblings(".goods-no").val();
+        var cartForm = {
+            itemId : itemId
+           };
+	            
+	    $.ajax({
+	           url: "/cart",
+	           data: cartForm,
+	           type: 'GET',
+	           success: function(result) {
+	               alert(cartForm.itemId+ " 상품을 담았습니다.");
+	               location.href = "/";
+	           },
+	
+	           error: function (jqXHR, textStatus, errorThrown) {
+	               alert(jqXHR.responseText);
+	               location.href="/members"
+	           }
+	       });
+	});
+}
+    
+
+function cartBtn2(btn,event) {
+    event.preventDefault();
+
+    $(function(){
+		var itemId = $(btn).parents(".goods").find(".item_title").text();
+        var cartForm = {
+            itemId : itemId
+           };
+	            
+	    $.ajax({
+	           url: "/cart",
+	           data: cartForm,
+	           type: 'GET',
+	           success: function(result) {
+	               alert(cartForm.itemId+ " 상품을 담았습니다.");
+	               location.href = "/";
+	           },
+	
+	           error: function (jqXHR, textStatus, errorThrown) {
+	               alert(jqXHR.responseText);
+	               location.href="/members"
+	           }
+	       });
+	});
+}
+    
+   </script>
+	<input type="hidden">
+	</main>
+</body>
+
+</html>

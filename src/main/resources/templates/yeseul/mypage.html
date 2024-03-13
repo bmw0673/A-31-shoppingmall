@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/my-layout::layout(~{this::head}, ~{this::main})}">
+
+<head>
+	<link rel="stylesheet" href="/css/yeseul/mypage.css">
+	<script>
+		function clickshow(elem, ID) {
+			var menu = document.getElementById(ID);
+			if (elem.className != 'clickcontents') {
+				elem.className = 'clickcontents';
+				menu.style.display = "none";
+			} else {
+				elem.className = 'opened';
+				menu.style.display = "block";
+			}
+		}
+	</script>
+	<script>
+		function clickshow(elem, ID) {
+			var menu = document.getElementById(ID);
+			if (elem.className != 'clickcontents2') {
+				elem.className = 'clickcontents2';
+				menu.style.display = "none";
+			} else {
+				elem.className = 'opened';
+				menu.style.display = "block";
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<main>
+		<div class="content">
+			<div class="mypage-wrap">
+				<div class="mypage-personal">
+					<div class="grade">
+						<i class="grade-icon"></i>
+					</div>
+					<div class="name">
+						<div sec:authentication="name" class="user-name"></div>
+						<em>님</em>
+					</div>
+					<div class="edit">
+						<a>
+							<i class="edit-icon"></i>
+							회원정보관리
+						</a>
+					</div>
+				</div>
+				<div class="mypage-personal2">
+					<ul>
+						<li>
+							<a href="#">
+								<i class="mypage-icon"></i>
+								<b>주문/배송</b>
+								<span>
+									<em>0 </em>
+									<em>건</em>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="mypage-icon2"></i>
+								<b>포인트</b>
+								<span>
+									<em>0 </em>
+									<em>P</em>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="mypage-icon3"></i>
+								<b>쿠폰</b>
+								<span>
+									<em>0 </em>
+									<!--<em>건</em>-->
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="mypage-icon4"></i>
+								<b>1:1문의</b>
+								<span>
+									<em>0 </em>
+									<!--<em>건</em>-->
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="mypage-contents-wrap">
+				<div class="mypage-lnb">
+					<a>
+						<h3>MY 쇼핑</h3>
+					</a>
+					<ul>
+						<li class="mypage-lnb2">
+							<a class="on" id="clickcontents" onclick="clickshow(this,'contents')">주문관리</a>
+							<div class="click-content" id="contents" style="display:none;">
+								<ul>
+									<li>
+										<a>주문/배송 내역</a>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<a>주문취소 내역</a>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<a>교환/반품 내역</a>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<a>정기구독</a>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<a>렌탈서비스 내역</a>
+									</li>
+								</ul>
+							</div>
+							<a>포인트내역</a>
+							<a>쿠폰내역</a>
+							<a>구매후기</a>
+							<a>상품문의내역</a>
+							<a>1:1문의내역</a>
+							<a>환불신청</a>
+							<a>회원정보관리</a>
+						</li>
+					</ul>
+				</div>
+				<div class="mypage-comm">
+					<div class="mypage-comm-block">
+						<h4>주문/배송상태 안내</h4>
+						<a id="clickcontents2" onclick="clickshow(this,'contents2')"></a>
+					</div>
+					<div class="mypage-order-wrap">
+						<div class="mypage-order">
+							<ol>
+								<li>
+									<div class="step-head">
+										<span>주문접수</span>
+									</div>
+									<div class="step-body">
+										입금 전 상태이며
+										<br>
+										2일 이내 미입금 시
+										<br>
+										자동취소됩니다.
+										<br>
+										(sms 발송)
+									</div>
+								</li>
+								<li>
+									<div class="step-head">
+										<span>결제완료</span>
+									</div>
+									<div class="step-body">
+										고객님의 결제내역
+										<br>
+										확인이 완료되었습니다.
+										<br>
+										(sms 발송)
+									</div>
+								</li>
+								<li>
+									<div class="step-head">
+										<span>상품준비중</span>
+									</div>
+									<div class="step-body">
+										주문 확인후 상품을
+										<br>
+										발송할 예정입니다.
+									</div>
+								</li>
+								<li>
+									<div class="step-head">
+										<span>배송중</span>
+									</div>
+									<div class="step-body">
+										상품이 배송중입니다.
+										<br>
+										1~2일 후 상품이
+										<br>
+										도착합니다.
+									</div>
+								</li>
+								<li>
+									<div class="step-head">
+										<span>배송완료</span>
+									</div>
+									<div class="step-body">
+										고객님이 상품을
+										<br>
+										수령하였습니다.
+										<br>
+										(sms 발송)
+									</div>
+								</li>
+							</ol>
+						</div>
+						<div class="mypage-order-guide click-content2" id="contents2" style="display:none;">
+							<div class="text-guide-block">
+								<p class="guideTit">1. 주문/결제/배송 관련설명</p>
+								<div class="guideTxt">
+									<ul>
+										<li>주문이 정상완료 되지 않으면 내역조회가 되지 않습니다.</li>
+										<li>무통장 입금 주문하신 경우, 5일내 전용계좌로 입금하셔야 하며 입금자명과 회원명이 달라도 결제처리 됩니다.</li>
+										<li>입금대기/결제완료 단계에서 정보변경 버튼을 클릭하시면 배송지정보와 배송시요구사항을 변경하실 수 있습니다.</li>
+										<li>결제수단 변경은 어려우니, 결제수단 변경이 필요한 경우 취소 후 재주문을 부탁 드립니다.</li>
+										<li>배송조회는 상품이 출고된 날의 익일 오전부터 가능합니다.</li>
+										<li>배송완료일로부터 2일 경과후에도 택배추적이 되지 않을 경우, 고객센터로 연락 부탁드립니다.</li>
+										<li>주문번호를 클릭하시면 주문상세내역을 확인하실 수 있으며, 영수증은 주문상세내역에서 출력하실 수 있습니다.</li>
+									</ul>
+								</div>
+								<div class="text-guide-block2">
+									<p class="guideTit">2. 배송유형 관련설명</p>
+									<div class="guideTxt">
+										<ul>
+											<li>나눔배송 : 결제완료 후 영업일 기준 2일이내 미발송된 경우 먼저 준비 된 상품부터 우선 발송됩니다.</li>
+											<li>묶음배송 : 주문상품이 모두 준비되면 한번에 묶어서 발송. (단, 산지직송 상품은 예외/ 산지직송 상품은 산지에서 고객님댁으로
+												직접
+												발송합니다.)</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mypage-cblock">
+						<h4>주문/배송 내역</h4>
+						<p>최근 주문하신 1년 이내의 내역만 보여집니다.</p>
+						<a></a>
+					</div>
+					<div class="mypage-order-block">
+						<p>주문 내역이 없습니다.</p>
+						<a></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<section class="quickMenu">
+			<div class="topbnt"><a>top↑</a></div>
+		</section>
+	</main>
+</body>
+
+</html>

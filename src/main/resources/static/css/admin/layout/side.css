@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+.side_bar {
+	left: 0;
+	width: 180px;
+	border-right: 1px solid;
+	display: flex;
+	flex-direction: column;
+	z-index: 10;
+	background-color: #2c3e50;
+	color: #ecf0f1;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	min-width: 180px;
+}
+
+.side_top {
+	height: 130px;
+	border-bottom: 1px solid #485a37;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 550;
+    font-size: 20px;
+    border-bottom: 1px solid #485a37;
+}
+.side_top_main > p {
+	font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.side_top_main > p:first-of-type  {
+	margin-bottom: 15px;
+}
+
+.side_bottom {
+	margin: 20px 0;
+	font-size: 20px
+}
+.side_bottom > ul > li {
+    margin-bottom: 15px; /* 3. 네비게이션 아이템 간격 일관성 */
+}
+
+.tab > a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	color: #ecf0f1;
+	padding: 15px 10px;
+	background-color: #235372;
+}
+.sub_tab {
+	display: none;
+	margin: 15px 0;
+}
+.sub_tab > a{
+	padding: 15px 10px;
+    color: #ecf0f1;
+    display: block;
+    font-size: 16px;
+}
+.sub_tab a:hover {
+	background-color:  #425b6b;
+        }
+
+

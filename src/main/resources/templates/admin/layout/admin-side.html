@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+	<section th:fragment="side" class="side_bar">
+		<div class="side_top">
+			<div class="side_top_main">
+				<p sec:authentication="name"></p>
+				<p>환영합니다.</p>
+			</div>
+		</div>
+		<nav class="side_bottom">
+			<ul>
+				<li class="tab">
+					<a href="/admin">관리자 메인</a>
+				</li>
+				<li class="tab">
+					<a>상품관리</a>
+					<ul class="sub_tab">
+						<a href="/admin/goods"><li>상품등록</li></a>
+						<a href="/admin/goods/list"><li>상품조회</li></a>
+					</ul>
+				</li>
+				<li class="tab">
+					<a>카테고리 관리</a>
+					<ul class="sub_tab">
+						<a href="/admin/category"><li>카테고리 관리</li></a>
+					</ul>
+				</li>
+				<li class="tab">
+					<a>회원관리</a>
+					<ul class="sub_tab">
+						<a href="#"><li>회원조회</li></a>
+					</ul>
+				</li>
+				<li class="tab">
+					<a>게시판 관리</a>
+					<ul class="sub_tab">
+						<a href="#"><li>1:1문의</li></a>
+						<a href="/admin/new-notice"><li>공지사항</li></a>
+						<a href="/admin/new-qna"><li>자주묻는질문</li></a>
+					</ul>
+				</li>
+				<li class="tab">
+					<a>회사 관리</a>
+					<ul class="sub_tab">
+						<a href="/admin/company"><li>정보수정</li></a>
+					</ul>
+				</li>
+				<li class="tab">
+					<a>부서 관리</a>
+					<ul class="sub_tab">
+						<a href="/admin/deptList"><li>부서관리</li></a>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		 <script>
+        $(document).ready(function () {
+            // 페이지 로드 시 localStorage에서 저장된 activeTab을 읽어와 적용
+            var activeTab = localStorage.getItem('activeTab');
+            if (activeTab) {
+                $('#' + activeTab).addClass('active');
+                $('#' + activeTab).parents('.tab').children('.sub_tab').slideDown();
+            }
+
+            $('.tab > a').click(function () {
+                var tabId = $(this).parent('.tab').attr('id');
+
+                // 클릭한 탭을 활성화하고 localStorage에 저장
+                $('.tab').removeClass('active');
+                $(this).parent('.tab').addClass('active');
+                localStorage.setItem('activeTab', tabId);
+
+                // 해당 탭의 하위 메뉴를 열거나 닫음
+                $('.sub_tab').slideUp();
+                if ($(this).siblings('.sub_tab').is(':hidden')) {
+                    $(this).siblings('.sub_tab').slideDown();
+                }
+            });
+        });
+    </script>
+	</section>
+</body>
+
+</html>

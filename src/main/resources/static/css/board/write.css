@@ -1,0 +1,127 @@
+@charset "UTF-8";
+main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	overflow-y:scroll;
+	margin-bottom:100px;
+}
+
+h2 {
+	font-size: 50px;
+	padding: 25px;
+	text-align: center;
+}
+
+
+.목록list {
+	box-sizing: border-box;
+	width: 1180px;
+}
+span {
+	padding:10px;
+}
+.ul {
+	width:1180px;
+	display: flex;
+	list-style: none;
+	padding: 10px;
+	justify-content: space-around;
+	height:80px;
+}
+
+.wrapper {
+	width: 80%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.menu_button {
+	box-sizing: border-box;
+	width: 150px;
+	font-size: 25px;
+	height: 100%;
+	background-color: white;
+	border-color: white;
+}
+
+.search_bar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: solid 2px #67754c;
+	padding: 15px 30px 15px 30px;
+	background-color: #f0ead4;
+	width: 1080px;
+		margin:30px 0 30px 0;
+}
+
+.more {
+	text-align: center;
+	padding: 0 20px 0 20px;
+	margin: 0 20px 0 20px;
+	display: flex;
+}
+
+.more>select {
+	width: 100px;
+	margin-right: 50px;
+}
+
+#검색 {
+	height: 30px;
+	width: 500px;
+	margin-right: 50px;
+}
+
+
+#제출 {
+	width:50px;
+	height:30px;
+}
+
+#작성 {
+	width:50px;
+	height:30px;
+	margin-left:30px;
+}
+td {
+	height: 40px;
+	padding: 10px;
+	vertical-align: middle;
+}
+
+.td_1 {
+		text-align: center;
+		font-weight:700;
+}
+.td_2 > input {
+	width:300px;
+}
+
+#thead {
+	border-bottom: solid 3px #67754c;
+	border-top: solid 3px #67754c;
+	font-size: 25px;
+	font-weight: 700;
+	text-align: center;
+}
+
+#thead2 {
+	text-align: center;
+}
+#thead1{
+	flex-wrap:wrap;
+}
+tr {
+	height:min-content;
+	}
+	
+.enroll {
+	margin-top:15px;
+	text-align:right;
+}
+
+

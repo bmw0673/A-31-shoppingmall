@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<section class="footer_container">
+		<div class="left">
+			<ul class="top-menu">
+				<li>
+					회사소개
+				</li>
+				<li>
+					이용약관
+				</li>
+				<li>
+					개인정보처리방침
+				</li>
+				<li>
+					이용안내
+				</li>
+				<li>
+					매장안내
+				</li>
+				<li>
+					A/S안내
+				</li>
+			</ul>
+			<div class="bottom-menu">
+				<p><span th:text="${footerInfo.companyName}">그린아카데미</span> 주식회사</p>
+				<span>대표이사 : <span id="ceo_name" th:text="${footerInfo.ceoName}"></span></span>
+				<span>주소 : <span th:text="${footerInfo.adress}"></span></span>
+				<span>A/S CENTER : <sapn th:text="${footerInfo.asTel}"></sapn></span>
+				<br>
+				<span>ONLINE STORE : <span th:text="${footerInfo.csTel}"></span> </span>
+				<span>통신판매업신고번호 : <span th:text="${footerInfo.businessNum}"></span></span>
+				<span>사업자등록번호 :  <span th:text="${footerInfo.comRegNum}"></span></span>
+				<em>
+					COPYRIGHTⒸ 2023 A31. ALL RIGHTS RESERVED. HOSTING BY NH A31. DESIGN BY A31.
+				</em>
+			</div>
+		</div>
+		<div class="right">
+			<strong class="cs-center">고객센터<a href="tel:02-6953-2002" th:text="${footerInfo.csTel}"></a></strong>
+			<p class="time">
+				운영시간 평일 <span th:text="${footerInfo.operatingTime}"></span> (토·일, 공휴일 휴무)<br>
+				점심시간 평일 <span th:text="${footerInfo.lunchTime}"></span>
+			</p>
+			<p class="as">
+				A/S 접수는 고객센터에서 가능합니다.
+			</p>
+		</div>
+	</section>
+	
+<html>

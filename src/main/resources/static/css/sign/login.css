@@ -1,0 +1,120 @@
+@charset "UTF-8";
+*{box-sizing: border-box;}
+.container__1{
+	display: flex;
+    justify-content: center;
+	min-width: 1024px;
+	height: 600px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.container__1>.container__2{
+	width: 350px;
+	height: 600px;
+}
+.container__1>.container__2>.container__3{
+	margin-bottom: 50px;
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: -3px;
+	color: #799172;
+}
+.container__1>.container__2>.container__4{
+	display: flex;
+    justify-content: center;
+    width: 350px;
+}
+.container__1>.container__2>.container__4>form>.container__5{
+	margin-bottom: 20px;
+}
+.container__1>.container__2>.container__4>form{
+	width: 350px;
+}
+.container__1>.container__2>.container__4>form>.container__last{
+}
+.container__1>.container__2>.container__4>form>.container__last>.container__last__1{
+	display: flex;
+    justify-content: center;
+}
+.container__1>.container__2>.container__4>form>.container__last>.container__last__1>.container__last__1__2,
+.container__1>.container__2>.container__4>form>.container__last>.container__last__1>.container__last__1__4{
+	margin: 0px 10px;
+}
+.container__1>.container__2>.container__4>form>.container__7{
+	width: 100%;
+	height: 40px;
+	margin-bottom: 30px;
+}
+.container__1>.container__2>.container__4>form>.container__7>button{
+	width: 100%;
+    height: 100%;
+    border: none;
+    background-color: #799172;
+    color: white;
+    letter-spacing: -1px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.container__1>.container__2>.container__4>form>.container__8{
+	text-align: center;
+    font-size: 11px;
+    color: grey;
+    margin-bottom: 10px;
+}
+.container__1>.container__2>.container__4>form>.container__9{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 30px;
+}
+.container__1>.container__2>.container__4>form>.container__9>.container__9__1{
+	
+}
+.container__1>.container__2>.container__4>form>.container__9>.container__9__2{
+	margin: 0 15px;
+}
+.container__1>.container__2>.container__4>form>.container__9>.container__9__1{
+	
+}
+.atag__style__1{
+	color: gray;
+	font-size: 11px;
+    letter-spacing: -1px;
+}
+.atag__style__2{
+	font-size: 10px;
+	color: gray;
+}
+.label__style{
+	font-size: 12px;
+	width: 100%;
+	margin-bottom: 10px;
+	letter-spacing: -1px;
+}
+.input__style{
+	height: 40px;
+	min-height: 40px;
+	width: 100%;
+	border: 1px solid darkgrey;
+	padding: 0 10px;
+	font-size: 11px;
+}
+.login__logo{
+	width: 35px;
+	height: 35px;
+}
+.DivisionLine__1{
+    height: 5px;
+    background-color: lightgray;
+    margin-bottom: 40px;
+}
+.DivisionLine__2{
+    height: 5px;
+    background-color: lightgray;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.msg{
+	margin-top: 3px;
+}
